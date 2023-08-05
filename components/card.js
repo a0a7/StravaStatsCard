@@ -64,6 +64,7 @@ async function getAccessToken(code) {
 
 async function getUserData() {
     if (!userData) {
+        console.log('Trying to get user data from Strava API')
         const apiUrl = 'https://www.strava.com/api/v3/athlete';
         const response = await fetch(apiUrl, {
             headers: {
@@ -80,6 +81,7 @@ async function getUserData() {
 
 async function getUserStats(id) {
     if (!userStats) {
+        console.log('Trying to get user stats from Strava API')
         const apiUrl = `https://www.strava.com/api/v3/athletes/${id}/stats`;
         const response = await fetch(apiUrl, {
             headers: {
