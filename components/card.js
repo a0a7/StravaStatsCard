@@ -194,7 +194,11 @@ function go() {
         document.getElementById("statNumber4").innerHTML = `${runDistance}`
         document.getElementById("statNumber6").innerHTML = `${runAchievementCount}`
     }
-
+    document.getElementById("output").visibility = 'visible'
+    html2canvas(document.querySelector("#output")).then(canvas => {
+        document.body.appendChild(canvas)
+    });
+    document.getElementById("output").visibility = 'none'
 }
 
 
