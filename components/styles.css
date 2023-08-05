@@ -95,7 +95,7 @@ select {
     font-size: 14px;
 }
 td {
-    padding-right: 30px;
+    padding-right: 20px;
 }
 [id*="statLabel"] {
     font-weight: bold;

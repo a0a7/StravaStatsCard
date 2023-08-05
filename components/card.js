@@ -209,6 +209,8 @@ async function go() {
 
     if (sport == "option1") {
         document.getElementById("statLabel1").innerHTML = 'Total Ride Count'
+        document.getElementById("statLabel2").innerHTML = 'Total Ride Moving Time'
+        document.getElementById("statLabel3").innerHTML = 'Total Ride Elevation Gain'
         document.getElementById("statLabel4").innerHTML = 'Total Ride Distance'
 
         document.getElementById("statNumber1").innerHTML = `${rideCount}`
@@ -220,6 +222,9 @@ async function go() {
         document.getElementById("longestRideDistance").classList.remove("hidden");
     } else if (sport == "option2") {
         document.getElementById("statLabel1").innerHTML = 'Total Run Count'
+        document.getElementById("statLabel2").innerHTML = 'Total Run Moving Time'
+        document.getElementById("statLabel3").innerHTML = 'Total Run Elevation Gain'
+
         document.getElementById("statLabel4").innerHTML = 'Total Run Distance'
 
         document.getElementById("statNumber1").innerHTML = `${runCount}`
