@@ -143,6 +143,9 @@ td {
     text-align: right;
     line-height: 0.78;
 }
+.lowOpacity {
+    opacity: 0.4;
+}
 .subtitle {
     font-size: 11.5px;
     opacity: 0.5;
