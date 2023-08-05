@@ -106,7 +106,7 @@ async function go() {
     const userData = await getUserData();
     console.log(`User Data: ${userData}`)
 
-    const id = str(userData.id);
+    const id = String(userData.id);
     console.log(`User ID: ${id}`)
     const username = userData.username;
     const name = `${userData.firstname} ${userData.lastname}`;
