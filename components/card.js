@@ -236,7 +236,7 @@ async function go() {
     html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':5}).then(canvas => {
         document.getElementById("card").appendChild(canvas)
     });
-    const parentElement = document.getElementById("parent");
+    const parentElement = document.getElementById("output");
     parent.visibility = 'hidden'
     parent.display = 'none'
     for (let i = 0; i < parentElement.children.length; i++) {
