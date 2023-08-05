@@ -115,7 +115,7 @@ async function go() {
     
     const userStats = await getUserStats(id)
     console.log(`User Stats: ${userStats}`)
-    const rideCount = userStats.all_ride_totals.count.toLocaleString();
+    const rideCount = userStats.all_ride_totals.count.toLocaleString(undefined, { useGrouping: true });
     const rideMovingTime = toTime(userStats.all_ride_totals.moving_time)
 
     var maxRide = userStats.biggest_ride_distance/100;
@@ -123,7 +123,7 @@ async function go() {
     var rideElevation = userStats.all_ride_totals.elevation_gain;
 
     const runMovingTime = toTime(userStats.all_run_totals.moving_time);
-    const runCount = userStats.all_run_totals.count.toLocaleString();
+    const runCount = userStats.all_run_totals.count.toLocaleString(undefined, { useGrouping: true });
 
     var runDistance = userStats.all_run_totals.distance/100;
     var runElevation = userStats.all_run_totals.elevation_gain;
@@ -149,23 +149,23 @@ async function go() {
     }
 
     if (units == "option1") {
-        maxRide = `${Math.floor(maxRide).toLocaleString()} km`
-        rideDistance = `${Math.floor(rideDistance).toLocaleString()} km`
-        rideElevation = `${Math.floor(rideElevation).toLocaleString()} m`
-        runDistance = `${Math.floor(runDistance).toLocaleString()} km`
-        runElevation = `${Math.floor(runElevation).toLocaleString()} m`
+        maxRide = `${Math.floor(maxRide).toLocaleString(undefined, { useGrouping: true })} km`
+        rideDistance = `${Math.floor(rideDistance).toLocaleString(undefined, { useGrouping: true })} km`
+        rideElevation = `${Math.floor(rideElevation).toLocaleString(undefined, { useGrouping: true })} m`
+        runDistance = `${Math.floor(runDistance).toLocaleString(undefined, { useGrouping: true })} km`
+        runElevation = `${Math.floor(runElevation).toLocaleString(undefined, { useGrouping: true })} m`
     } else if (units == "option2") {
-        maxRide = `${Math.floor(maxRide * 0.6213711922).toLocaleString()} km`
-        rideDistance = `${Math.floor(rideDistance * 0.6213711922).toLocaleString()} km`
-        rideElevation = `${Math.floor(rideElevation * 3.280839895).toLocaleString()} m`
-        runDistance = `${Math.floor(runDistance * 0.6213711922).toLocaleString()} km`
-        runElevation = `${Math.floor(runElevation * 3.280839895).toLocaleString()} m`
+        maxRide = `${Math.floor(maxRide * 0.6213711922).toLocaleString(undefined, { useGrouping: true })} km`
+        rideDistance = `${Math.floor(rideDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true })} km`
+        rideElevation = `${Math.floor(rideElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true })} m`
+        runDistance = `${Math.floor(runDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true })} km`
+        runElevation = `${Math.floor(runElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true })} m`
     } else {
-        maxRide = `${Math.floor(maxRide).toLocaleString()} km`
-        rideDistance = `${Math.floor(rideDistance).toLocaleString()} km`
-        rideElevation = `${Math.floor(rideElevation).toLocaleString()} m`
-        runDistance = `${Math.floor(runDistance).toLocaleString()} km`
-        runElevation = `${Math.floor(runElevation).toLocaleString()} m`
+        maxRide = `${Math.floor(maxRide).toLocaleString(undefined, { useGrouping: true })} km`
+        rideDistance = `${Math.floor(rideDistance).toLocaleString(undefined, { useGrouping: true })} km`
+        rideElevation = `${Math.floor(rideElevation).toLocaleString(undefined, { useGrouping: true })} m`
+        runDistance = `${Math.floor(runDistance).toLocaleString(undefined, { useGrouping: true })} km`
+        runElevation = `${Math.floor(runElevation).toLocaleString(undefined, { useGrouping: true })} m`
     }
 
     // Handle Color Scheme Choices
