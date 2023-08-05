@@ -313,6 +313,7 @@ function colorChanged() {
         var textColor = '#1f2328'
         document.getElementById("stravaWatermark").style.opacity = 0.1;
     }
+    console.log(`Background Color: ${backgroundColor}, Outline Color: ${outlineColor}, Text Color: ${textColor}`)
     document.getElementById("output").style.backgroundColor = backgroundColor;
     document.getElementById("output").style.borderColor = outlineColor;
     const parent = document.getElementById("output");
