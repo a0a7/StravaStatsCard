@@ -155,11 +155,11 @@ async function go() {
         runDistance = `${Math.floor(runDistance).toLocaleString(undefined, { useGrouping: true })} km`
         runElevation = `${Math.floor(runElevation).toLocaleString(undefined, { useGrouping: true })} m`
     } else if (units == "option2") {
-        maxRide = `${Math.floor(maxRide * 0.6213711922).toLocaleString(undefined, { useGrouping: true })} km`
-        rideDistance = `${Math.floor(rideDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true })} km`
-        rideElevation = `${Math.floor(rideElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true })} m`
-        runDistance = `${Math.floor(runDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true })} km`
-        runElevation = `${Math.floor(runElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true })} m`
+        maxRide = `${Math.floor(maxRide * 0.6213711922).toLocaleString(undefined, { useGrouping: true })} ft`
+        rideDistance = `${Math.floor(rideDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true })} mi`
+        rideElevation = `${Math.floor(rideElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true })} ft`
+        runDistance = `${Math.floor(runDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true })} mi`
+        runElevation = `${Math.floor(runElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true })} ft`
     } else {
         maxRide = `${Math.floor(maxRide).toLocaleString(undefined, { useGrouping: true })} km`
         rideDistance = `${Math.floor(rideDistance).toLocaleString(undefined, { useGrouping: true })} km`
@@ -201,7 +201,7 @@ async function go() {
     if (flagFormatted == '' || flagFormatted == 'undefined' || flagFormatted == 'null' || flagFormatted == 'none') {
         document.getElementById('profileFlag').style.visibility = 'hidden';
     }
-    document.getElementById("profileFlag").src = `https://cdn.countryflags.com/thumbs/${flagFormatted}/flag-waving-500.png`
+    document.getElementById("profileFlag").src = `https://cdn.countryflags.com/thumbs/${flagFormatted}/flag-button-round-500.png`
 
     if (sport == "option1") {
         document.getElementById("statNumber1").innerHTML = `${rideCount}`
@@ -251,7 +251,7 @@ function formatFlag(flagIn) {
 function toTime(seconds) {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
-    const hoursString = hours > 0 ? `${hours}h ` : '';
-    const minutesString = minutes > 0 ? `${minutes}m` : '';
+    const hoursString = hours > 0 ? `${hours} h ` : '';
+    const minutesString = minutes > 0 ? `${minutes} min` : '';
     return `${hoursString}${minutesString}`;
   }

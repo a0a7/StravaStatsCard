@@ -113,7 +113,7 @@ td {
     opacity: 0.03;
     position: absolute;
     width: 125px;
-    right: 2px;
+    right: -2px;
     top: 5px;
 }
 #myWatermark {
