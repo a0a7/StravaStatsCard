@@ -7,47 +7,92 @@
   <meta name="keywords" content="strava, stats, profile">
   <meta name="author" content="Alexander Weimer">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="components/api.js"></script>
   <script src="components/card.js"></script>
   <link rel="stylesheet" href="components/styles.css">
 </head>
 <body>
-  <button type="button" class="connectButton" onclick="authenticate()"><img class="connectButton" src="assets/connectWithStrava.svg"></button>
-  <div id="output">
-    <div id="userInfo">
-      <img id="profilePicture">
-      <div id="userText">
-        <div id="nameTagline">Alexander Weimer Strava Cycling Stats</div>
-        <div id="accountInfo">@alexandsr | Created 14 Nov 2017</div>
-      </div>
-      <div id="stats">
-        <div id="stat">
-          <div id="statLabel">Total Rides</div>
-          <div id="statNumber">0</div>
-        </div>
-        <div id="stat">
-          <div id="statLabel">Total Moving Time</div>
-          <div id="statNumber">0</div>
-        </div>
-        <div id="">
-          <div id="statLabel">Total Distance</div>
-          <div id="statNumber">0</div>
-        </div>
-        <div id="stat">
-          <div id="statLabel">Total Elevation</div>
-          <div id="statNumber">0</div>
-        </div>
-        <div id="stat">
-          <div id="statLabel">Total Achievements</div>
-          <div id="statNumber">0</div>
-        </div>
-
-    </div>
-
-  </div>
-  <div id="card"></div>
-
+  <b>Step 1: Connect to Strava API</b><br>
+  <button type="button" id="connectButton" onclick="authenticate()"><img id="connectButton" src="assets/connectWithStrava.svg"></button><br>
+  <b><br>Step 2: Configure Stats Card</b><br>
+  <div id="config">
+  <label for="sport">Main Sport:</label>
+  <select id="sport" name="sport">
+    <option value="option1">Cycling</option>
+    <option value="option2">Running</option>
+  </select><br>
+  <label for="units">Units:</label>
+  <select id="units" name="units">
+    <option value="option1">Metric/SI</option>
+    <option value="option2">American</option>
+  </select><br>
+  <label for="colorScheme">Color Scheme:</label>
+  <select id="colorScheme" name="colorScheme">
+    <option value="option1">Light</option>
+    <option value="option2">Dim</option>
+    <option value="option3">Dark</option>
+  </select></div>
+  <button type="button" id="go" onclick="go()"><b>Generate</b></button><br>
   <img id="poweredByStrava" src="assets/api_logo_pwrdBy_strava_horiz_gray.png">
 
- </body>
+  <div id="output">
+    <div id="userInfo">
+      <img id="profilePicture" src="assets/placeholder.webp">
+      <div id="userText">
+        <div id="nameTagline">Firstname Surname Athlete Profile</div>
+        <div id="accountInfo">@username | Created 1 Jan. 1970</div>
+      </div>
+    </div>
+    <div id="stats">
+      <table>
+        <tr>
+          <td>
+            <div id="statLabel1">Total Activity Count</div>
+          </td><td> 
+            <div id="statNumber1">-1</div>
+          </td>
+        </tr>
+        <tr>
+          <td> 
+            <div id="statLabel2">Total Moving Time</div>
+          </td><td>
+            <div id="statNumber2">-1</div>
+          </td>
+        </tr>
+        <tr>
+          <td> 
+            <div id="statLabel3">Total Elevation</div>
+          </td><td> 
+            <div id="statNumber3">-1</div>
+          </td>
+        </tr>
+        <tr>
+          <td> 
+            <div id="statLabel4">Total Distance</div>
+          </td><td> 
+            <div id="statNumber4">-1</div>
+          </td>
+        </tr>
+        <tr class="hidden" id="longestRideDistance">
+          <td> 
+            <div id="statLabel5">Longest Ride Distance</div>
+          </td><td> 
+            <div id="statNumber5">-1</div>
+          </td>
+        </tr>
+        <tr>
+          <td> 
+            <div id="statLabel6">Total Achievements</div>
+          </td><td> 
+            <div id="statNumber6">-1</div>
+          </td>
+        </tr>
+
+      </table>
+      <img id="stravaWatermark" src="assets/watermarkStrava.svg">
+      <div id="myWatermark">ridemap.tk/card</div>
+
+    </div>
+  <div id="card"></div>
+
+</body>
 </html>

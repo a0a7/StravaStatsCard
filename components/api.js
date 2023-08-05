@@ -28,7 +28,6 @@ window.addEventListener("load", (event) => {
 
 async function main() {
     await getActivities()
-    await displayRides()
 }
 
 // Redirect the user to the Strava authorization page
@@ -41,9 +40,6 @@ function authenticate() {
   window.location.href = authUrl;
 }
 
-$("#connectButton").click(function () {
-    authenticate()
-})
 
 // Get the authorization code from the URL
 function getURLCode() {

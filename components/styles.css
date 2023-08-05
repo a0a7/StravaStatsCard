@@ -1,7 +1,126 @@
+@font-face {
+    font-family: 'Nimbus';
+    src: url('../assets/fonts/NimbusSanL-Reg.woff2') format('woff2'),
+         url('../assets/fonts/NimbusSanL-Reg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Nimbus, sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #c8d6dd;
+    background-color: #161b22;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+  
 #poweredByStrava {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 100px;
+    width: 150px;
     padding: 15px;
 }
+
+#connectButton {
+    padding: 0px;
+    margin: 0px;
+    outline-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+}
+b {
+    color: #ecf2f8;
+}
+#go {
+    margin-top: 10px;
+    padding: 5px 8px 7px 8px;
+    background-color:  #28313e;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+}
+
+#go:active {
+    background-color: #ecf2f8;
+    color:  #28313e;
+}
+#go:active * {
+    background-color: #ecf2f8;
+    color:  #28313e;
+}
+select {
+    background-color:  #28313e;
+    color: #ecf2f8;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    padding: 1px;
+    padding-left: 3px;
+}
+#profilePicture {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    display: inline-block;
+}
+ #userText {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 4px;
+    padding-top: 2px;
+    font-size: 16px;
+    line-height: 1.3;
+}
+#nameTagline {
+    font-weight: bold;
+}
+#stats {
+    line-height: 1.1;
+    padding-left: 1px;
+    font-size: 14px;
+}
+td {
+    padding-right: 30px;
+}
+[id*="statLabel"] {
+    font-weight: bold;
+}
+#accountInfo {
+    opacity: 0.7
+}
+#output {
+    margin-top: 25px;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #c8d6dd;
+    position: relative;
+    min-width: 360px;
+}
+#stravaWatermark {
+    opacity: 0.03;
+    position: absolute;
+    width: 135px;
+    right: -2px;
+    top: 5px;
+}
+#myWatermark {
+    opacity: 0.08;
+    position: absolute;
+    right: 17px;
+    bottom: 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.hidden {
+    display: none;
+  }
