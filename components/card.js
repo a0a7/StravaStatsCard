@@ -240,8 +240,8 @@ async function go() {
     });
     document.getElementById("card").style.display = 'block';
     const parentElement = document.getElementById("preview");
-    parent.style.visibility = 'hidden'
-    parent.style.display = 'none'
+    parentElement.style.visibility = 'hidden'
+    parentElement.style.display = 'none'
 }
 
 function formatDate(notFormatted) {
