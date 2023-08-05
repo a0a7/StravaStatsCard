@@ -237,8 +237,8 @@ async function go() {
         document.getElementById("card").appendChild(canvas)
     });
     const parentElement = document.getElementById("output");
-    parent.visibility = 'hidden'
-    parent.display = 'none'
+    parent.style.visibility = 'hidden'
+    parent.style.display = 'none'
     for (let i = 0; i < parentElement.children.length; i++) {
       const childElement = parentElement.children[i];
       childElement.style.visibility = 'hidden';
