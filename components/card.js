@@ -149,23 +149,23 @@ async function go() {
     }
 
     if (units == "option1") {
-        maxRide = `${Math.floor(maxRide).toLocaleString(undefined, { useGrouping: true })} km`
-        rideDistance = `${Math.floor(rideDistance).toLocaleString(undefined, { useGrouping: true })} km`
-        rideElevation = `${Math.floor(rideElevation).toLocaleString(undefined, { useGrouping: true })} m`
-        runDistance = `${Math.floor(runDistance).toLocaleString(undefined, { useGrouping: true })} km`
-        runElevation = `${Math.floor(runElevation).toLocaleString(undefined, { useGrouping: true })} m`
+        maxRide = `${maxRide.toFixed(2).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} km`
+        rideDistance = `${Math.floor(rideDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} km`
+        rideElevation = `${Math.floor(rideElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} m`
+        runDistance = `${Math.floor(runDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} km`
+        runElevation = `${Math.floor(runElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} m`
     } else if (units == "option2") {
-        maxRide = `${Math.floor(maxRide * 0.6213711922).toLocaleString(undefined, { useGrouping: true })} ft`
-        rideDistance = `${Math.floor(rideDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true })} mi`
-        rideElevation = `${Math.floor(rideElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true })} ft`
-        runDistance = `${Math.floor(runDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true })} mi`
-        runElevation = `${Math.floor(runElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true })} ft`
+        maxRide = `${(maxRide * 0.6213711922).toFixed(2).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} ft`
+        rideDistance = `${Math.floor(rideDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} mi`
+        rideElevation = `${Math.floor(rideElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} ft`
+        runDistance = `${Math.floor(runDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} mi`
+        runElevation = `${Math.floor(runElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} ft`
     } else {
-        maxRide = `${Math.floor(maxRide).toLocaleString(undefined, { useGrouping: true })} km`
-        rideDistance = `${Math.floor(rideDistance).toLocaleString(undefined, { useGrouping: true })} km`
-        rideElevation = `${Math.floor(rideElevation).toLocaleString(undefined, { useGrouping: true })} m`
-        runDistance = `${Math.floor(runDistance).toLocaleString(undefined, { useGrouping: true })} km`
-        runElevation = `${Math.floor(runElevation).toLocaleString(undefined, { useGrouping: true })} m`
+        maxRide = `${maxRide.toFixed(2).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} km`
+        rideDistance = `${Math.floor(rideDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} km`
+        rideElevation = `${Math.floor(rideElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} m`
+        runDistance = `${Math.floor(runDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} km`
+        runElevation = `${Math.floor(runElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} m`
     }
 
     // Handle Color Scheme Choices
@@ -205,7 +205,7 @@ async function go() {
     if (flagFormatted == '' || flagFormatted == 'undefined' || flagFormatted == 'null' || flagFormatted == 'none') {
         document.getElementById('profileFlag').style.visibility = 'hidden';
     }
-    document.getElementById("profileFlag").src = `https://cdn.countryflags.com/thumbs/${flagFormatted}/flag-button-round-500.png`
+    await (document.getElementById("profileFlag").src = `https://cdn.countryflags.com/thumbs/${flagFormatted}/flag-button-round-500.png`)
 
     if (sport == "option1") {
         document.getElementById("statLabel1").innerHTML = 'Total Ride Count'
@@ -236,9 +236,14 @@ async function go() {
     html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':5}).then(canvas => {
         document.getElementById("card").appendChild(canvas)
     });
-    document.getElementById("output").visibility = 'hidden'
-    document.getElementById("output").display = 'none'
-
+    const parentElement = document.getElementById("parent");
+    parent.visibility = 'hidden'
+    parent.display = 'none'
+    for (let i = 0; i < parentElement.children.length; i++) {
+      const childElement = parentElement.children[i];
+      childElement.style.visibility = 'hidden';
+      childElement.style.display = 'none';
+    }
 }
 
 function formatDate(notFormatted) {
