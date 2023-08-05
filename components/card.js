@@ -207,7 +207,7 @@ async function go() {
         document.getElementById("statNumber4").innerHTML = `${runDistance}`
     }
     document.getElementById("output").visibility = 'visible'
-    html2canvas(document.querySelector("#output"), {backgroundColor:null}).then(canvas => {
+    html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':2}).then(canvas => {
         document.getElementById("card").appendChild(canvas)
     });
     document.getElementById("output").visibility = 'none'
