@@ -197,7 +197,6 @@ async function go() {
         document.getElementById("statNumber2").innerHTML = `${rideMovingTime}`
         document.getElementById("statNumber3").innerHTML = `${rideElevation}`
         document.getElementById("statNumber4").innerHTML = `${rideDistance}`
-        document.getElementById("statNumber6").innerHTML = `${rideAchievementCount}`
 
         document.getElementById("statNumber5").innerHTML = `${maxRide}`
         document.getElementById("longestRideDistance").classList.remove("hidden");
@@ -206,7 +205,6 @@ async function go() {
         document.getElementById("statNumber2").innerHTML = `${runMovingTime}`
         document.getElementById("statNumber3").innerHTML = `${runElevation}`
         document.getElementById("statNumber4").innerHTML = `${runDistance}`
-        document.getElementById("statNumber6").innerHTML = `${runAchievementCount}`
     }
     document.getElementById("output").visibility = 'visible'
     html2canvas(document.querySelector("#output")).then(canvas => {
