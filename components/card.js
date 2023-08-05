@@ -104,7 +104,6 @@ function go() {
     
     const userStats = getUserStats(id)
     const maxRide = userStats.biggest_ride_distance
-    const rideStats = userStats.all_ride_totals
     const rideCount = userStats.all_ride_totals.count
     const rideDistance = userStats.all_ride_totals.distance
     const rideElevation = userStats.all_ride_totals.elevation_gain
@@ -175,6 +174,26 @@ function go() {
     }
     console.log(`Selected Options: ${colorScheme}, ${bigDistanceU}/${smallDistanceU}, ${sportName}`)
 
+    document.getElementById("nameTagline").innerHTML = `${name} ${sportName}`
+    document.getElementById("accountInfo").innerHTML = `@${username} | Created ${creationDate}`
+    document.getElementById("profilePicture").src = `${picture}`
+    if (sport == "option1") {
+        document.getElementById("statNumber1").innerHTML = `${rideCount}`
+        document.getElementById("statNumber2").innerHTML = `${rideMovingTime}`
+        document.getElementById("statNumber3").innerHTML = `${rideElevation}`
+        document.getElementById("statNumber4").innerHTML = `${rideDistance}`
+        document.getElementById("statNumber6").innerHTML = `${rideAchievementCount}`
+
+        document.getElementById("statNumber5").innerHTML = `${maxRide}`
+        document.getElementById("longestRideDistance").classList.remove("hidden");
+    } else if (sport == "option2") {
+        document.getElementById("statNumber1").innerHTML = `${runCount}`
+        document.getElementById("statNumber2").innerHTML = `${runMovingTime}`
+        document.getElementById("statNumber3").innerHTML = `${runElevation}`
+        document.getElementById("statNumber4").innerHTML = `${runDistance}`
+        document.getElementById("statNumber6").innerHTML = `${runAchievementCount}`
+    }
+
 }
 
 
@@ -183,14 +202,7 @@ function formatDate(notFormatted) {
     const date = new Date(notFormatted);
     return date.toLocaleString("en-GB", {
       year: "numeric",
-      month: "long",
+      month: "short",
       day: "2-digit",
-      hour12: false,
-      timeZone: "UTC",
     });
-}
-function formatTime(seconds) {
-    const time = new Date(seconds);
-    time.setSeconds(time);
-    return time.toISOString().substr(11, 8)
 }
