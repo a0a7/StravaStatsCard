@@ -238,6 +238,7 @@ async function go() {
     html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':5}).then(canvas => {
         document.getElementById("card").appendChild(canvas)
     });
+    document.getElementById("card").style.display = 'block';
     const parentElement = document.getElementById("preview");
     parent.style.visibility = 'hidden'
     parent.style.display = 'none'

@@ -126,7 +126,7 @@ td {
 #stravaWatermark {
     opacity: 0.08;
     position: absolute;
-    width: 110px;
+    width: 100px;
     right: -2px;
     top: 5px;
 }
@@ -137,6 +137,8 @@ td {
     bottom: 12px;
     font-weight: bold;
     font-size: 12px;
+    text-align: right;
+    line-height: 0.78;
 }
 .subtitle {
     font-size: 11.5px;
