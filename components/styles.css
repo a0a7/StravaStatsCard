@@ -107,15 +107,15 @@ td {
 #stravaWatermark {
     opacity: 0.03;
     position: absolute;
-    width: 135px;
-    right: -2px;
+    width: 125px;
+    right: 2px;
     top: 5px;
 }
 #myWatermark {
-    opacity: 0.08;
+    opacity: 0.06;
     position: absolute;
-    right: 17px;
-    bottom: 15px;
+    right: 15px;
+    bottom: 12px;
     font-weight: bold;
     font-size: 14px;
 }

@@ -98,7 +98,7 @@ function go() {
     const name = `${userData.firstname} ${userData.lastname}`;
     const creationDate = formatDate(userData.created_at)
     const picture = userData.profile
-
+    
     const userStats = getUserStats(id)
     const maxRide = userStats.biggest_ride_distance
     const rideStats = userStats.all_ride_totals
@@ -114,7 +114,7 @@ function go() {
     const runElevation = userStats.all_run_totals.elevation_gain
     const runMovingTime = userStats.all_run_totals.moving_time
     const runAchievementCount = userStats.all_run_totals.achievement_count
-
+    
     var sportName = ''
     var backgroundColor = ''
     var textColor = ''
