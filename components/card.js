@@ -139,7 +139,7 @@ async function go() {
     const units = document.getElementById("units").value;
     const sport = document.getElementById("sport").value;
     const flag = document.getElementById("flag").value;
-    const flagFormatted = formatFlag(flag);
+    const flagFormatted = await formatFlag(flag);
     // Handle Different Sport Choices
     if (sport == "option1") {
         sportName = "Cyclist Profile"
@@ -207,7 +207,7 @@ async function go() {
         document.getElementById("statNumber4").innerHTML = `${runDistance}`
     }
     document.getElementById("output").visibility = 'visible'
-    html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':2}).then(canvas => {
+    html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':5}).then(canvas => {
         document.getElementById("card").appendChild(canvas)
     });
     document.getElementById("output").visibility = 'none'
