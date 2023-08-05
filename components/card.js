@@ -1,5 +1,3 @@
-const clientId = '98135';
-const clientSecret = process.env.CLIENT_SECRET;
 
 window.addEventListener("load", (event) => {
     getURLCode()
@@ -14,6 +12,9 @@ window.addEventListener("load", (event) => {
 async function main() {
     await getActivities()
 }
+
+const clientId = '98135';
+const longNumber = '250fb83eda23244fd4a165a4a8565f398a5e1e56';
 
 // Redirect the user to the Strava authorization page
 function authenticate() {
@@ -46,7 +47,7 @@ async function getAccessToken(code) {
         },
         body: JSON.stringify({
           client_id: clientId,
-          client_secret: clientSecret,
+          client_secret: longNumber,
           code: code,
           grant_type: 'authorization_code', 
         }),
