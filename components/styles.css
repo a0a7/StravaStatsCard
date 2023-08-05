@@ -108,6 +108,7 @@ td {
     border: 2px solid #c8d6dd;
     position: relative;
     min-width: 360px;
+    transform: scale(1.5, 1.5)
 }
 #stravaWatermark {
     opacity: 0.03;
