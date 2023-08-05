@@ -292,6 +292,7 @@ async function flagChanged() {
 function colorChanged() {
     console.log('Color Scheme Changed')
     console.log('Running Color Scheme Function')
+    const colorScheme = document.getElementById("colorScheme").value;
     if (colorScheme == "option1") {
         var backgroundColor = '#ffffff'
         var outlineColor = '#F2F2F2'
