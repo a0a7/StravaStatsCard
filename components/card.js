@@ -141,7 +141,7 @@ async function go() {
     const flagFormatted = await formatFlag(flag);
     // Handle Different Sport Choices
     if (sport == "option1") {
-        sportName = "Cycling Profile"
+        sportName = "Cyclist Profile"
     } else if (sport == "option2") {
         sportName = "Running Profile"
     } else {
