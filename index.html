@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Strava Stats Card Generator</title>
+  <meta name="description" content="Generate an embeddable card showing your Strava activity stats.">
+  <meta name="keywords" content="strava, stats, profile">
+  <meta name="author" content="Alexander Weimer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="components/api.js"></script>
+  <script src="components/card.js"></script>
+  <link rel="stylesheet" href="components/styles.css">
+</head>
+<body>
+  <button type="button" class="connectButton" onclick="authenticate()"><img class="connectButton" src="assets/connectWithStrava.svg"></button>
+  <div id="output">
+    <div id="userInfo">
+      <img id="profilePicture">
+      <div id="userText">
+        <div id="nameTagline">Alexander Weimer Strava Cycling Stats</div>
+        <div id="accountInfo">@alexandsr | Created 14 Nov 2017</div>
+      </div>
+      <div id="stats">
+        <div id="stat">
+          <div id="statLabel">Total Rides</div>
+          <div id="statNumber">0</div>
+        </div>
+        <div id="stat">
+          <div id="statLabel">Total Moving Time</div>
+          <div id="statNumber">0</div>
+        </div>
+        <div id="">
+          <div id="statLabel">Total Distance</div>
+          <div id="statNumber">0</div>
+        </div>
+        <div id="stat">
+          <div id="statLabel">Total Elevation</div>
+          <div id="statNumber">0</div>
+        </div>
+        <div id="stat">
+          <div id="statLabel">Total Achievements</div>
+          <div id="statNumber">0</div>
+        </div>
+
+    </div>
+
+  </div>
+  <div id="card"></div>
+
+  <img id="poweredByStrava" src="assets/api_logo_pwrdBy_strava_horiz_gray.png">
+
+ </body>
+</html>
