@@ -237,6 +237,8 @@ async function go() {
         document.getElementById("card").appendChild(canvas)
     });
     document.getElementById("output").visibility = 'hidden'
+    document.getElementById("output").display = 'none'
+
 }
 
 function formatDate(notFormatted) {
