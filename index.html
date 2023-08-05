@@ -32,13 +32,20 @@
     <option value="option1">Light</option>
     <option value="option2">Dim</option>
     <option value="option3">Dark</option>
-  </select></div>
+  </select><br>
+  <label for="flag">Profile Flag:</label>
+  <input type="text" id="flag" name="flag" placeholder="Hong Kong">
+  <p class="subtitle">Optional. Input an English country/state name.</p>
+  </div>
+
   <button type="button" id="go" onclick="go()"><b>Generate</b></button><br>
   <img id="poweredByStrava" src="assets/api_logo_pwrdBy_strava_horiz_gray.png">
 
   <div id="output">
     <div id="userInfo">
       <img id="profilePicture" src="assets/placeholder.webp">
+      <img id="profileFlag" src="">
+
       <div id="userText">
         <div id="nameTagline">Firstname Surname Athlete Profile</div>
         <div id="accountInfo">@username | Created 1 Jan. 1970</div>

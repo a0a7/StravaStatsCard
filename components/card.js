@@ -138,7 +138,8 @@ async function go() {
     const colorScheme = document.getElementById("colorScheme").value;
     const units = document.getElementById("units").value;
     const sport = document.getElementById("sport").value;
-
+    const flag = document.getElementById("flag").value;
+    const flagFormatted = formatFlag(flag);
     // Handle Different Sport Choices
     if (sport == "option1") {
         sportName = "Cyclist Profile"
@@ -188,7 +189,9 @@ async function go() {
 
     document.getElementById("nameTagline").innerHTML = `${name} ${sportName}`
     document.getElementById("accountInfo").innerHTML = `@${username} | Created ${creationDate}`
-    document.getElementById("profilePicture").src = `${picture}`
+    document.getElementById("profilePicture").src = picture
+    document.getElementById("profileFlag").src = `https://cdn.countryflags.com/thumbs/${flagFormatted}/flag-waving-500.png`
+
     if (sport == "option1") {
         document.getElementById("statNumber1").innerHTML = `${rideCount}`
         document.getElementById("statNumber2").innerHTML = `${rideMovingTime}`
@@ -212,8 +215,6 @@ async function go() {
     document.getElementById("output").visibility = 'none'
 }
 
-
-
 function formatDate(notFormatted) {
     const date = new Date(notFormatted);
     return date.toLocaleString("en-GB", {
@@ -221,4 +222,20 @@ function formatDate(notFormatted) {
       month: "short",
       day: "2-digit",
     });
+}
+
+function formatFlag(flagIn) {
+    const flagLowercase = flagIn.toLowerCase();
+    const flagNoSpaces = flagLowercase.replace(/\s/g, "-");
+    const flagNoSpacesOrDots = flagNoSpaces.replace(/[\s.]/g, "");
+    if (flagNoSpacesOrDots == 'united-states-of-america' || flagNoSpacesOrDots == 'united-states' || flagNoSpacesOrDots == 'usa' || flagNoSpacesOrDots == 'us' || flagNoSpacesOrDots == 'america' ) {
+        return 'united-states-of-america';
+    }
+    if  (flagNoSpacesOrDots == 'hong-kong') {
+        return 'hongkong';
+    }
+    if (flagNoSpacesOrDots == 'the-netherlands') {
+        return 'netherlands';
+    }
+    return flagNoSpacesOrDots;
 }
