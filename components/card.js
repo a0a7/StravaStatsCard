@@ -149,23 +149,23 @@ async function go() {
     }
 
     if (units == "option1") {
-        maxRide = `${maxRide.toFixed(2).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} km`
-        rideDistance = `${Math.floor(rideDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} km`
-        rideElevation = `${Math.floor(rideElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} m`
-        runDistance = `${Math.floor(runDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} km`
-        runElevation = `${Math.floor(runElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} m`
+        maxRide = `${maxRide.toFixed(2).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} km`
+        rideDistance = `${Math.floor(rideDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} km`
+        rideElevation = `${Math.floor(rideElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} m`
+        runDistance = `${Math.floor(runDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} km`
+        runElevation = `${Math.floor(runElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} m`
     } else if (units == "option2") {
-        maxRide = `${(maxRide * 0.6213711922).toFixed(2).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} ft`
-        rideDistance = `${Math.floor(rideDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} mi`
-        rideElevation = `${Math.floor(rideElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} ft`
-        runDistance = `${Math.floor(runDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} mi`
-        runElevation = `${Math.floor(runElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} ft`
+        maxRide = `${(maxRide * 0.6213711922).toFixed(2).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} ft`
+        rideDistance = `${Math.floor(rideDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} mi`
+        rideElevation = `${Math.floor(rideElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} ft`
+        runDistance = `${Math.floor(runDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} mi`
+        runElevation = `${Math.floor(runElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} ft`
     } else {
-        maxRide = `${maxRide.toFixed(2).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} km`
-        rideDistance = `${Math.floor(rideDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} km`
-        rideElevation = `${Math.floor(rideElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} m`
-        runDistance = `${Math.floor(runDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} km`
-        runElevation = `${Math.floor(runElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ' ')} m`
+        maxRide = `${maxRide.toFixed(2).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} km`
+        rideDistance = `${Math.floor(rideDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} km`
+        rideElevation = `${Math.floor(rideElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} m`
+        runDistance = `${Math.floor(runDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} km`
+        runElevation = `${Math.floor(runElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} m`
     }
 
     // Handle Color Scheme Choices
