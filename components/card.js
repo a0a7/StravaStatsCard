@@ -198,6 +198,9 @@ async function go() {
     document.getElementById("nameTagline").innerHTML = `${name} ${sportName}`
     document.getElementById("accountInfo").innerHTML = `@${username} | Created ${creationDate}`
     document.getElementById("profilePicture").src = picture
+    if (flagFormatted == '' || flagFormatted == 'undefined' || flagFormatted == 'null' || flagFormatted == 'none') {
+        document.getElementById('profileFlag').style.visibility = 'hidden';
+    }
     document.getElementById("profileFlag").src = `https://cdn.countryflags.com/thumbs/${flagFormatted}/flag-waving-500.png`
 
     if (sport == "option1") {
@@ -218,7 +221,7 @@ async function go() {
     html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':5}).then(canvas => {
         document.getElementById("card").appendChild(canvas)
     });
-    document.getElementById("output").visibility = 'none'
+    document.getElementById("output").visibility = 'hidden'
 }
 
 function formatDate(notFormatted) {
