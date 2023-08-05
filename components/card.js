@@ -1,3 +1,4 @@
+var data;
 
 window.addEventListener("load", (event) => {
     getURLCode()
