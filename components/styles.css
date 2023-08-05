@@ -171,3 +171,7 @@ input {
     left: 42px;
     top: 42px;
 }
+
+#outputText {
+    margin-bottom: 3px;
+}
