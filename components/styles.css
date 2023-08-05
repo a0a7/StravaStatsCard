@@ -107,11 +107,14 @@ td {
 #accountInfo {
     opacity: 0.7
 }
+#preview {
+    margin-top: 20px;
+}
 #output {
     transform: scale(1.4, 1.4);
     top: 40px;
     left: 77px;
-    margin-top: 25px;
+    margin-top: -5px;
     display: inline-block;
     padding: 8px;
     border-radius: 15px;
