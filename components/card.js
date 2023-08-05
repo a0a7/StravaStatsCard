@@ -115,19 +115,18 @@ async function go() {
     
     const userStats = await getUserStats(id)
     console.log(`User Stats: ${userStats}`)
-    const maxRide = userStats.biggest_ride_distance
-    const rideCount = userStats.all_ride_totals.count
-    const rideDistance = userStats.all_ride_totals.distance
-    const rideElevation = userStats.all_ride_totals.elevation_gain
-    const rideMovingTime = userStats.all_ride_totals.moving_time
-    const rideAchievementCount = userStats.all_ride_totals.achievement_count
+    const rideCount = userStats.all_ride_totals.count.toLocaleString();
+    const rideMovingTime = toTime(userStats.all_ride_totals.moving_time)
 
-    const runStats = userStats.all_run_totals
-    const runCount = userStats.all_run_totals.count
-    const runDistance = userStats.all_run_totals.distance
-    const runElevation = userStats.all_run_totals.elevation_gain
-    const runMovingTime = userStats.all_run_totals.moving_time
-    const runAchievementCount = userStats.all_run_totals.achievement_count
+    var maxRide = userStats.biggest_ride_distance/100;
+    var rideDistance = userStats.all_ride_totals.distance/100;
+    var rideElevation = userStats.all_ride_totals.elevation_gain;
+
+    const runMovingTime = toTime(userStats.all_run_totals.moving_time);
+    const runCount = userStats.all_run_totals.count.toLocaleString();
+
+    var runDistance = userStats.all_run_totals.distance/100;
+    var runElevation = userStats.all_run_totals.elevation_gain;
     
     var sportName = ''
     var backgroundColor = ''
@@ -150,14 +149,23 @@ async function go() {
     }
 
     if (units == "option1") {
-        bigDistanceU = " km"
-        smallDistanceU = " m"
+        maxRide = `${Math.floor(maxRide).toLocaleString()} km`
+        rideDistance = `${Math.floor(rideDistance).toLocaleString()} km`
+        rideElevation = `${Math.floor(rideElevation).toLocaleString()} m`
+        runDistance = `${Math.floor(runDistance).toLocaleString()} km`
+        runElevation = `${Math.floor(runElevation).toLocaleString()} m`
     } else if (units == "option2") {
-        bigDistanceU = " mi"
-        smallDistanceU = " ft"
+        maxRide = `${Math.floor(maxRide * 0.6213711922).toLocaleString()} km`
+        rideDistance = `${Math.floor(rideDistance * 0.6213711922).toLocaleString()} km`
+        rideElevation = `${Math.floor(rideElevation * 3.280839895).toLocaleString()} m`
+        runDistance = `${Math.floor(runDistance * 0.6213711922).toLocaleString()} km`
+        runElevation = `${Math.floor(runElevation * 3.280839895).toLocaleString()} m`
     } else {
-        bigDistanceU = " km"
-        smallDistanceU = " m"
+        maxRide = `${Math.floor(maxRide).toLocaleString()} km`
+        rideDistance = `${Math.floor(rideDistance).toLocaleString()} km`
+        rideElevation = `${Math.floor(rideElevation).toLocaleString()} m`
+        runDistance = `${Math.floor(runDistance).toLocaleString()} km`
+        runElevation = `${Math.floor(runElevation).toLocaleString()} m`
     }
 
     // Handle Color Scheme Choices
@@ -237,3 +245,10 @@ function formatFlag(flagIn) {
     }
     return flagNoSpacesOrDots;
 }
+function toTime(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const hoursString = hours > 0 ? `${hours}h ` : '';
+    const minutesString = minutes > 0 ? `${minutes}m` : '';
+    return `${hoursString}${minutesString}`;
+  }
