@@ -102,17 +102,18 @@ async function getUserStats(id) {
 
 
 
-function go() {
-    const userData = getUserData();
+async function go() {
+    const userData = await getUserData();
     console.log(`User Data: ${userData}`)
 
-    const id = userData.id;
+    const id = str(userData.id);
+    console.log(`User ID: ${id}`)
     const username = userData.username;
     const name = `${userData.firstname} ${userData.lastname}`;
     const creationDate = formatDate(userData.created_at)
     const picture = userData.profile
     
-    const userStats = getUserStats(id)
+    const userStats = await getUserStats(id)
     console.log(`User Stats: ${userStats}`)
     const maxRide = userStats.biggest_ride_distance
     const rideCount = userStats.all_ride_totals.count
