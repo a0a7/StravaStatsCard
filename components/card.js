@@ -315,6 +315,8 @@ function colorChanged() {
     }
     document.getElementById("output").style.backgroundColor = backgroundColor;
     document.getElementById("output").style.borderColor = outlineColor;
+    const parent = document.getElementById("output");
+    const children = parent.querySelectorAll("*");
     for (let i = 0; i < children.length; i++) {
       children[i].style.color = textColor;
     }
