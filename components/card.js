@@ -13,13 +13,13 @@ async function main() {
     await getActivities()
 }
 
-const clientId = '98135';
-const longNumber = '250fb83eda23244fd4a165a4a8565f398a5e1e56';
+const clientId = '111687';
+const longNumber = '7e417fc36b963fbce56903215cce12a0b5fdba70';
 
 // Redirect the user to the Strava authorization page
 function authenticate() {
     console.log('Starting Auth Sequence')
-    const redirectUri = 'https://ridemap.tk/card';
+    const redirectUri = 'https://stravacard.pages.dev';
     const responseType = 'code';
     const scope = 'read,activity:read';
     const authUrl = `https://www.strava.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}`;
