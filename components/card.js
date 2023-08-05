@@ -118,14 +118,14 @@ async function go() {
     const rideCount = userStats.all_ride_totals.count.toLocaleString(undefined, { useGrouping: true });
     const rideMovingTime = toTime(userStats.all_ride_totals.moving_time)
 
-    var maxRide = userStats.biggest_ride_distance/100;
-    var rideDistance = userStats.all_ride_totals.distance/100;
+    var maxRide = userStats.biggest_ride_distance/1000;
+    var rideDistance = userStats.all_ride_totals.distance/1000;
     var rideElevation = userStats.all_ride_totals.elevation_gain;
 
     const runMovingTime = toTime(userStats.all_run_totals.moving_time);
     const runCount = userStats.all_run_totals.count.toLocaleString(undefined, { useGrouping: true });
 
-    var runDistance = userStats.all_run_totals.distance/100;
+    var runDistance = userStats.all_run_totals.distance/1000;
     var runElevation = userStats.all_run_totals.elevation_gain;
     
     var sportName = ''
@@ -204,6 +204,9 @@ async function go() {
     document.getElementById("profileFlag").src = `https://cdn.countryflags.com/thumbs/${flagFormatted}/flag-button-round-500.png`
 
     if (sport == "option1") {
+        document.getElementById("statLabel1").innerHTML = 'Total Ride Count'
+        document.getElementById("statLabel4").innerHTML = 'Total Ride Distance'
+
         document.getElementById("statNumber1").innerHTML = `${rideCount}`
         document.getElementById("statNumber2").innerHTML = `${rideMovingTime}`
         document.getElementById("statNumber3").innerHTML = `${rideElevation}`
@@ -212,6 +215,9 @@ async function go() {
         document.getElementById("statNumber5").innerHTML = `${maxRide}`
         document.getElementById("longestRideDistance").classList.remove("hidden");
     } else if (sport == "option2") {
+        document.getElementById("statLabel1").innerHTML = 'Total Run Count'
+        document.getElementById("statLabel4").innerHTML = 'Total Run Distance'
+
         document.getElementById("statNumber1").innerHTML = `${runCount}`
         document.getElementById("statNumber2").innerHTML = `${runMovingTime}`
         document.getElementById("statNumber3").innerHTML = `${runElevation}`
@@ -255,3 +261,44 @@ function toTime(seconds) {
     const minutesString = minutes > 0 ? `${minutes} min` : '';
     return `${hoursString}${minutesString}`;
   }
+
+async function flagChanged() {
+    console.log('Flag Changed')
+    const flag = document.getElementById("flag").value;
+    const flagFormatted = await formatFlag(flag);
+    console.log(`Flag deemed to be '${flagFormatted}' after formatting.`)
+    if (flagFormatted == '' || flagFormatted == 'undefined' || flagFormatted == 'null' || flagFormatted == 'none') {
+        document.getElementById('profileFlag').style.visibility = 'hidden';
+    }
+    document.getElementById("profileFlag").src = `https://cdn.countryflags.com/thumbs/${flagFormatted}/flag-button-round-500.png`
+};
+
+function colorChanged() {
+    console.log('Color Scheme Changed')
+    console.log('Running Color Scheme Function')
+    const colorScheme = document.getElementById("colorScheme").value;
+    if (colorScheme == "option1") {
+        var backgroundColor = '#ffffff'
+        var textColor = '#1f2328'
+        document.getElementById("stravaWatermark").style.opacity = 0.1;
+    } else if (colorScheme == "option2") {
+        var backgroundColor = '#22272e'
+        var textColor = '#adbac7'
+        document.getElementById("stravaWatermark").style.opacity = 0.03;
+    } else if (colorScheme == "option3") {
+        var backgroundColor = '#161b22'
+        var textColor = '#c8d6dd'
+        document.getElementById("stravaWatermark").style.opacity = 0.03;
+    } else {
+        var backgroundColor = '#ffffff'
+        var textColor = '#1f2328'
+        document.getElementById("stravaWatermark").style.opacity = 0.1;
+    }
+    document.getElementById("output").style.backgroundColor = backgroundColor;
+    document.getElementById("output").style.borderColor = textColor;
+    const parent = document.getElementById("output");
+    const children = parent.querySelectorAll("*");
+    for (let i = 0; i < children.length; i++) {
+      children[i].style.color = textColor;
+    }
+};

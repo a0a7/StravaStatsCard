@@ -23,12 +23,19 @@ body {
   
 #poweredByStrava {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 1px;
+    right: 0px;
     width: 200px;
     padding: 15px;
-    opacity: 0.25;
+    line-height: 0.5;
+    text-align: right;
 }
+#poweredByStrava * {
+    width: 175px;
+    opacity: 0.08;
+    font-size: 10.4px;
+}
+
 
 #connectButton {
     padding: 0px;
@@ -68,7 +75,7 @@ select {
 #profilePicture {
     width: 48px;
     height: 48px;
-    border-radius: 15px;
+    border-radius: 12px;
     display: inline-block;
 }
  #userText {
@@ -101,29 +108,35 @@ td {
     opacity: 0.7
 }
 #output {
+    transform: scale(1.5, 1.5);
+    top: 40px;
+    left: 90px;
     margin-top: 25px;
     display: inline-block;
-    padding: 10px;
+    padding: 8px;
     border-radius: 15px;
-    border: 2px solid #c8d6dd;
+    border: 2px solid #1f2328;
     position: relative;
     min-width: 360px;
-    transform: scale(1.5, 1.5)
+    background-color: #ffffff;
+}
+#output * {
+    color: #1f2328;
 }
 #stravaWatermark {
-    opacity: 0.03;
+    opacity: 0.08;
     position: absolute;
-    width: 125px;
+    width: 110px;
     right: -2px;
     top: 5px;
 }
 #myWatermark {
     opacity: 0.06;
     position: absolute;
-    right: 15px;
+    right: 12px;
     bottom: 12px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
 }
 .subtitle {
     font-size: 11.5px;
@@ -146,9 +159,7 @@ input {
 
 #profileFlag {
     position: absolute;
-    width: 20px;
-    left: 41px;
+    width: 18px;
+    left: 42px;
     top: 42px;
-    transform: scale(1, 1)
-
 }

@@ -28,18 +28,22 @@
     <option value="option2">American</option>
   </select><br>
   <label for="colorScheme">Color Scheme:</label>
-  <select id="colorScheme" name="colorScheme">
+  <select id="colorScheme" name="colorScheme" onchange="colorChanged()">
     <option value="option1">Light</option>
     <option value="option2">Dim</option>
     <option value="option3">Dark</option>
   </select><br>
   <label for="flag">Profile Flag:</label>
-  <input type="text" id="flag" name="flag" placeholder="Belgium, New York, etc.">
+  <input type="text" id="flag" name="flag" placeholder="Belgium, New York, etc." onblur="flagChanged()"> 
   <p class="subtitle">Input a country/state name, or leave blank.</p>
   </div>
 
   <button type="button" id="go" onclick="go()"><b>Generate</b></button><br>
-  <img id="poweredByStrava" src="assets/api_logo_pwrdBy_strava_horiz_gray.png">
+  <div id="poweredByStrava">
+    <img src="assets/api_logo_pwrdBy_strava_horiz_gray.png">
+    <label>This website not affiliated with Strava</label>
+    <label>made by alexander weimer</label>
+  </div>
 
   <div id="output">
     <div id="userInfo">
@@ -57,28 +61,28 @@
           <td>
             <div id="statLabel1">Total Activity Count</div>
           </td><td> 
-            <div id="statNumber1">-1</div>
+            <div id="statNumber1">20</div>
           </td>
         </tr>
         <tr>
           <td> 
             <div id="statLabel2">Total Moving Time</div>
           </td><td>
-            <div id="statNumber2">-1</div>
+            <div id="statNumber2">9 h 5 min</div>
           </td>
         </tr>
         <tr>
           <td> 
             <div id="statLabel3">Total Elevation Gain</div>
           </td><td> 
-            <div id="statNumber3">-1</div>
+            <div id="statNumber3">500 m</div>
           </td>
         </tr>
         <tr>
           <td> 
             <div id="statLabel4">Total Distance</div>
           </td><td> 
-            <div id="statNumber4">-1</div>
+            <div id="statNumber4">90 km</div>
           </td>
         </tr>
         <tr class="hidden" id="longestRideDistance">
