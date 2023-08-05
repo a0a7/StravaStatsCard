@@ -171,23 +171,27 @@ async function go() {
     // Handle Color Scheme Choices
     if (colorScheme == "option1") {
         var backgroundColor = '#ffffff'
+        var outlineColor = '#F2F2F2'
         var textColor = '#1f2328'
         document.getElementById("stravaWatermark").style.opacity = 0.1;
     } else if (colorScheme == "option2") {
         var backgroundColor = '#22272e'
+        var outlineColor = '#333A45'
         var textColor = '#adbac7'
         document.getElementById("stravaWatermark").style.opacity = 0.03;
     } else if (colorScheme == "option3") {
         var backgroundColor = '#161b22'
+        var outlineColor = '#212933'
         var textColor = '#c8d6dd'
         document.getElementById("stravaWatermark").style.opacity = 0.03;
     } else {
         var backgroundColor = '#ffffff'
+        var outlineColor = '#F2F2F2'
         var textColor = '#1f2328'
         document.getElementById("stravaWatermark").style.opacity = 0.1;
     }
     document.getElementById("output").style.backgroundColor = backgroundColor;
-    document.getElementById("output").style.borderColor = textColor;
+    document.getElementById("output").style.borderColor = outlineColor;
     const parent = document.getElementById("output");
     const children = parent.querySelectorAll("*");
     for (let i = 0; i < children.length; i++) {
