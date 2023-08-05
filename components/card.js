@@ -1,3 +1,6 @@
+const clientId = '98135';
+const clientSecret = process.env.CLIENT_SECRET;
+
 window.addEventListener("load", (event) => {
     getURLCode()
     if (code) {
