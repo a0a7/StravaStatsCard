@@ -1,4 +1,6 @@
 var data;
+var userData;
+var userStats;
 
 window.addEventListener("load", (event) => {
     getURLCode()
