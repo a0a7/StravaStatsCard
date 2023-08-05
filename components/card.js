@@ -232,18 +232,15 @@ async function go() {
         document.getElementById("statNumber3").innerHTML = `${runElevation}`
         document.getElementById("statNumber4").innerHTML = `${runDistance}`
     }
-    document.getElementById("output").visibility = 'visible'
+    document.getElementById("preview").style.visibility = 'visible';
+    document.getElementById("preview").style.display = 'block';
+
     html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':5}).then(canvas => {
         document.getElementById("card").appendChild(canvas)
     });
-    const parentElement = document.getElementById("output");
+    const parentElement = document.getElementById("preview");
     parent.style.visibility = 'hidden'
     parent.style.display = 'none'
-    for (let i = 0; i < parentElement.children.length; i++) {
-      const childElement = parentElement.children[i];
-      childElement.style.visibility = 'hidden';
-      childElement.style.display = 'none';
-    }
 }
 
 function formatDate(notFormatted) {
