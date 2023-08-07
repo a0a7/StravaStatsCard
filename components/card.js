@@ -238,43 +238,15 @@ async function go() {
     }
     document.getElementById("preview").style.visibility = 'visible';
     document.getElementById("preview").style.display = 'block';
-    const container = document.createElement("div");
-    container.style.display = "flex";
-    container.style.flexDirection = "column";
-    const button = document.createElement("button");
-    button.id = "buttonDownload";
-    button.textContent = "Save Image";
-    button.style.width = "100px"; 
-
-    button.addEventListener("click", function() {
-        console.log('Download Button Clicked')
-        const canvas = document.querySelector("#card canvas");
-        canvas.toBlob(function(blob) {
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement("a");
-            link.download = "image.png";
-            link.href = url;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(url);
-        }, "image/png");
-});
-
-    document.getElementById("card").appendChild(container);
 
     html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':5}).then(canvas => {
-        container.appendChild(canvas);
-        container.appendChild(button);
-
+        document.getElementById("card").appendChild(canvas)
     });
     document.getElementById("card").style.display = 'block';
     const parentElement = document.getElementById("preview");
     parentElement.style.visibility = 'hidden'
     parentElement.style.display = 'none'
 }
-
-
 
 function formatDate(notFormatted) {
     const date = new Date(notFormatted);
