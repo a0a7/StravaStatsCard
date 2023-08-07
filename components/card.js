@@ -155,7 +155,7 @@ async function go() {
         runDistance = `${Math.floor(runDistance).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} km`
         runElevation = `${Math.floor(runElevation).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} m`
     } else if (units == "option2") {
-        maxRide = `${(maxRide * 0.6213711922).toFixed(2).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} ft`
+        maxRide = `${(maxRide * 0.6213711922).toFixed(2).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} mi`
         rideDistance = `${Math.floor(rideDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} mi`
         rideElevation = `${Math.floor(rideElevation * 3.280839895).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} ft`
         runDistance = `${Math.floor(runDistance * 0.6213711922).toLocaleString(undefined, { useGrouping: true }).replace(/\s/g, ',')} mi`
@@ -325,4 +325,3 @@ function colorChanged() {
       children[i].style.color = textColor;
     }
 };
-
