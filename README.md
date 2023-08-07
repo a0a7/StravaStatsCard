@@ -21,14 +21,14 @@ Takes user input of any country, territory, or American state name and prints a 
 Uses the https://countryflags.com API.
 
 ## App Screenshots
-<img src="https://github.com/alexandsr/StravaStatsCard/assets/61996958/470f17eb-5c5b-43eb-b606-6837f28b500c" width="45%">
+<img src="https://github.com/alexandsr/StravaStatsCard/assets/61996958/470f17eb-5c5b-43eb-b606-6837f28b500c" width="80%">
 
 *The app before card generation.*
 
 
 
 ---
-<img src="https://github.com/alexandsr/StravaStatsCard/assets/61996958/b391183d-66f9-4600-a449-74569b3692d9" width="45%">
+<img src="https://github.com/alexandsr/StravaStatsCard/assets/61996958/b391183d-66f9-4600-a449-74569b3692d9" width="80%">
 
 *The app after card generation.*
 
