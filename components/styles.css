@@ -184,3 +184,19 @@ github-corners {
     width: 95px;
     height: 95px;
 }
+#buttonDownload {
+    margin-top: 10px;
+    padding: 5px 8px 7px 8px;
+    background-color:  #28313e;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+}
+
+#buttonDownload:active {
+    background-color: #ecf2f8;
+    color:  #28313e;
+}
+#buttonDownload:active * {
+    background-color: #ecf2f8;
+    color:  #28313e;
+}

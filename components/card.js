@@ -242,11 +242,27 @@ async function go() {
     html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':5}).then(canvas => {
         document.getElementById("card").appendChild(canvas)
     });
+    const button = document.createElement("button");
+    button.id = "buttonDownload";
+    button.textContent = "Save Image";
+    button.addEventListener("click", function() {
+    const canvas = document.querySelector("#card canvas");
+    const dataURL = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.download = "image.png";
+    link.href = dataURL;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    });
+    document.getElementById("card").appendChild(button);
     document.getElementById("card").style.display = 'block';
     const parentElement = document.getElementById("preview");
     parentElement.style.visibility = 'hidden'
     parentElement.style.display = 'none'
 }
+
+
 
 function formatDate(notFormatted) {
     const date = new Date(notFormatted);
