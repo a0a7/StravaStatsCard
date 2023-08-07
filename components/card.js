@@ -200,7 +200,11 @@ async function go() {
     console.log(`Selected Options: ${colorScheme}, ${bigDistanceU}/${smallDistanceU}, ${sportName}`)
 
     document.getElementById("nameTagline").innerHTML = `${name} ${sportName}`
-    document.getElementById("accountInfo").innerHTML = `@${username} | Created ${creationDate}`
+    if (username != null || username != undefined || username != '') {
+        document.getElementById("accountInfo").innerHTML = `@${username} | Created ${creationDate}`
+    } else {
+        document.getElementById("accountInfo").innerHTML = `Strava Profile Created ${creationDate}`
+    }
     document.getElementById("profilePicture").src = picture
     if (flagFormatted == '' || flagFormatted == 'undefined' || flagFormatted == 'null' || flagFormatted == 'none') {
         document.getElementById('profileFlag').style.visibility = 'hidden';
