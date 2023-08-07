@@ -248,15 +248,18 @@ async function go() {
 
     button.addEventListener("click", function() {
         console.log('Download Button Clicked')
-    const canvas = document.querySelector("#card canvas");
-    const dataURL = canvas.toDataURL("image/png");
-    const link = document.createElement("a");
-    link.download = "image.png";
-    link.href = dataURL;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    });
+        const canvas = document.querySelector("#card canvas");
+        canvas.toBlob(function(blob) {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.download = "image.png";
+            link.href = url;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }, "image/png");
+});
 
     document.getElementById("card").appendChild(container);
 
