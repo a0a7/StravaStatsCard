@@ -1,5 +1,5 @@
 # StravaStatsCard ![license](https://img.shields.io/github/license/alexandsr/StravaStatsCard) ![uptime](https://img.shields.io/uptimerobot/ratio/m794965603-919436dbfdd90f950f48124f) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fstravacard.pages.dev&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=total+page+views&edge_flat=false)](https://hits.seeyoufarm.com) 
-A tool to create a profile card displaying your Strava run or ride statistics in a visually appealing way. Hosted at [https://stravacard.pages.dev/](https://stravacard.pages.dev/).
+A tool to create a profile card displaying your Strava run or ride statistics. Hosted at [https://stravacard.pages.dev/](https://stravacard.pages.dev/).
 
 <img src="https://github.com/alexandsr/StravaStatsCard/assets/61996958/47d49c04-a625-4e53-9612-1d34fb69b9f9" width="30%">
 <img src="https://github.com/alexandsr/StravaStatsCard/assets/61996958/050f9174-a04d-4c75-8146-a793f4845f2b" width="30%">
