@@ -241,7 +241,6 @@ async function go() {
     const container = document.createElement("div");
     container.style.display = "flex";
     container.style.flexDirection = "column";
-    container.style.justifyContent = "center";
     const button = document.createElement("button");
     button.id = "buttonDownload";
     button.textContent = "Save Image";
