@@ -325,3 +325,4 @@ function colorChanged() {
       children[i].style.color = textColor;
     }
 };
+

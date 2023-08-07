@@ -175,3 +175,12 @@ input {
 #outputText {
     margin-bottom: 3px;
 }
+
+github-corners {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    width: 95px;
+    height: 95px;
+}
