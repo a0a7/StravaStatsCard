@@ -238,14 +238,19 @@ async function go() {
     }
     document.getElementById("preview").style.visibility = 'visible';
     document.getElementById("preview").style.display = 'block';
+    const container = document.createElement("div");
+    container.style.display = "flex";
+    container.style.flexDirection = "column";
+    document.getElementById("card").appendChild(container);
 
     html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':5}).then(canvas => {
-        document.getElementById("card").appendChild(canvas)
+        container.appendChild(canvas);
     });
     const button = document.createElement("button");
     button.id = "buttonDownload";
     button.textContent = "Save Image";
     button.addEventListener("click", function() {
+        console.log('Download Button Clicked')
     const canvas = document.querySelector("#card canvas");
     const dataURL = canvas.toDataURL("image/png");
     const link = document.createElement("a");
@@ -255,7 +260,7 @@ async function go() {
     link.click();
     document.body.removeChild(link);
     });
-    document.getElementById("card").appendChild(button);
+    container.appendChild(button);
     document.getElementById("card").style.display = 'block';
     const parentElement = document.getElementById("preview");
     parentElement.style.visibility = 'hidden'
