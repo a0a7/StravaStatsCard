@@ -241,14 +241,12 @@ async function go() {
     const container = document.createElement("div");
     container.style.display = "flex";
     container.style.flexDirection = "column";
-    document.getElementById("card").appendChild(container);
-
-    html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':5}).then(canvas => {
-        container.appendChild(canvas);
-    });
+    container.style.justifyContent = "center";
     const button = document.createElement("button");
     button.id = "buttonDownload";
     button.textContent = "Save Image";
+    button.style.width = "100px"; 
+
     button.addEventListener("click", function() {
         console.log('Download Button Clicked')
     const canvas = document.querySelector("#card canvas");
@@ -260,7 +258,14 @@ async function go() {
     link.click();
     document.body.removeChild(link);
     });
-    container.appendChild(button);
+
+    document.getElementById("card").appendChild(container);
+
+    html2canvas(document.querySelector("#output"), {backgroundColor:null, allowTaint:true, 'window.devicePixelRatio':5}).then(canvas => {
+        container.appendChild(canvas);
+        container.appendChild(button);
+
+    });
     document.getElementById("card").style.display = 'block';
     const parentElement = document.getElementById("preview");
     parentElement.style.visibility = 'hidden'
