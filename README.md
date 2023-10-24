@@ -1,4 +1,4 @@
-# StravaStatsCard ![uptime](https://img.shields.io/uptimerobot/ratio/m794965603-919436dbfdd90f950f48124f) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fstravacard.pages.dev&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=total+page+views&edge_flat=false)](https://hits.seeyoufarm.com) ![license](https://img.shields.io/github/license/alexandsr/StravaStatsCard) 
+# StravaStatsCard ![uptime](https://img.shields.io/uptimerobot/ratio/m794965603-919436dbfdd90f950f48124f)![license](https://img.shields.io/github/license/alexandsr/StravaStatsCard) 
 A tool to create a profile card displaying your Strava run or ride statistics. Hosted at [https://stravacard.pages.dev/](https://stravacard.pages.dev/).
 
 <img src="https://github.com/alexandsr/StravaStatsCard/assets/61996958/47d49c04-a625-4e53-9612-1d34fb69b9f9" width="30%">
@@ -31,4 +31,4 @@ Uses the https://countryflags.com API.
 <img src="https://github.com/alexandsr/StravaStatsCard/assets/61996958/b391183d-66f9-4600-a449-74569b3692d9" width="80%">
 
 *The app after card generation.*
-
+<!-- [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fstravacard.pages.dev&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=total+page+views&edge_flat=false)](https://hits.seeyoufarm.com) -->
