@@ -16,9 +16,6 @@ async function main() {
     await getActivities()
 }
 
-const clientId = '111687';
-const longNumber = '7e417fc36b963fbce56903215cce12a0b5fdba70';
-
 // Redirect the user to the Strava authorization page
 function authenticate() {
     console.log('Starting Auth Sequence')
